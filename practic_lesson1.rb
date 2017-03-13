@@ -1,3 +1,4 @@
+
 require 'faraday'
 class Image
 	CLIENT_ERROR = /4\d\d/
