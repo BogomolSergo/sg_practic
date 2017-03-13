@@ -52,4 +52,4 @@ end
 
 Email.new('breinkiller650gmail.com') # Fine
 #Sms.new('380930851354') # Dont
-#Sms.log
+#Sms.log # Show log
