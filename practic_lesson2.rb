@@ -6,15 +6,15 @@ module Notification
 
 	module ClassMethods
 		def log
-			if File.exist?('email.log')
-			File.open('email.log', 'r') { |f| puts f.readlines }
-			else raise StandardError, 'Nothing to show.'
+			if itself.name == 'Email'
+				File.open('email.log', 'r') { |f| puts f.readlines }
+				else File.open('sms.log', 'r') { |f| puts f.readlines }
 			end
 		end
 	end
 
 	def add_to_log(recipient)
-		if
+		if itself.class.name == 'Email'
 			File.open('email.log', 'a') { |f| f.write "Invalid email: #{recipient} was input. Error time: #{Time.now}\n" }
 		else
 			File.open('sms.log', 'a') { |f| f.write "Invalid phone number: #{recipient}. Use only mobile. Error time: #{Time.now}\n" }
@@ -32,13 +32,13 @@ class Email
 		if email =~ /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 			send_message(email) { |recipient| puts "Sending email to #{recipient}" }
 		else
-			raise TypeError, 'Invalid email =)'
 			add_to_log(email)
+			raise TypeError, 'Invalid email =)'
 		end
 	end
 end
 
-class SMS
+class Sms
 	include Notification
 	def initialize(number)
 		if number =~ /\+380\d{9}/
@@ -51,5 +51,5 @@ class SMS
 end
 
 Email.new('breinkiller650gmail.com') # Fine
-#SMS.new('380930851354') # Dont
-#Email.log
+#Sms.new('380930851354') # Dont
+#Sms.log
