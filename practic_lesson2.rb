@@ -5,44 +5,51 @@ module Notification
 	end
 
 	module ClassMethods
-		def log(path)
-			if path.include? 'email_log'
-				File.open(path, 'a') { |f| f.write "Invalid email was input. Error time: #{Time.now}\n" }
-				raise TypeError, 'Invalid email =)'
-			else
-				File.open(path, 'a') { |f| f.write "Invalid phone number! Use only mobile. Error time: #{Time.now}\n" }
-				raise TypeError, 'Invalid phone number! Use only mobile.'
+		def log
+			if File.exist?('email.log')
+			File.open('email.log', 'r') { |f| puts f.readlines }
+			else raise StandardError, 'Nothing to show.'
 			end
 		end
 	end
 
-	def send_message(type, recipient)
-		puts "Sending Email to #{recipient}" if type == 'Email'
-		puts "Sending SMS to #{recipient}" if type == 'SMS'
+	def add_to_log(recipient)
+		if
+			File.open('email.log', 'a') { |f| f.write "Invalid email: #{recipient} was input. Error time: #{Time.now}\n" }
+		else
+			File.open('sms.log', 'a') { |f| f.write "Invalid phone number: #{recipient}. Use only mobile. Error time: #{Time.now}\n" }
+		end
+	end
+
+	def send_message(recipient)
+		yield(recipient) if block_given?
 	end
 end
 
 class Email
 	include Notification
-	EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	def initialize(email)
-		if email =~ EMAIL
-			send_message(itself.class.name, email)
-		else Email.log('email_log.log')
+		if email =~ /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+			send_message(email) { |recipient| puts "Sending email to #{recipient}" }
+		else
+			raise TypeError, 'Invalid email =)'
+			add_to_log(email)
 		end
 	end
 end
 
 class SMS
 	include Notification
-	NUM = /\+380\d{9}/
 	def initialize(number)
-		if number =~ NUM
-			send_message(itself.class.name, number)
-			else Email.log('sms_log.log')
+		if number =~ /\+380\d{9}/
+			send_message(number) { |recipient| puts "Sending SMS to #{recipient}" }
+		else
+			add_to_log(number)
+			raise TypeError, 'Invalid phone number! Use only mobile.'
 		end
 	end
 end
 
-Email.new('breinkiller650@gmail.com') # Fine
+Email.new('breinkiller650gmail.com') # Fine
 #SMS.new('380930851354') # Dont
+#Email.log
