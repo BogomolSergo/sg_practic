@@ -50,6 +50,7 @@ class Sms
 	end
 end
 
-Email.new('breinkiller650gmail.com') # Fine
+#Email.new('breinkiller650gmail.com') # Fine
 #Sms.new('380930851354') # Dont
 #Sms.log # Show log
+Email.log
