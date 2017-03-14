@@ -24,7 +24,8 @@ module Notification
 	end
 
 	def add_to_log(recipient)
-		File.open("#{self.class.name.downcase}.log", 'a') { |f| f.write "Invalid #{self.class.name} receiver: #{recipient} was input. Error time: #{Time.now}\n" }
+		File.open("#{self.class.name.downcase}.log", 'a') { |f| f.write "
+		Invalid #{self.class.name} receiver: #{recipient} was input. Error time: #{Time.now}\n" }
 	end
 
 	def send_message(recipient)
