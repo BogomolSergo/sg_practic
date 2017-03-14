@@ -21,7 +21,7 @@ module Notification
 			yield(recipient) if block_given?
 		else
 			add_to_log(recipient)
-			raise TypeError, (self.class.name == 'Email') ? 'Invalid email =)' : 'Invalid phone number! Use only mobile.'
+			raise TypeError, (self.class.name == 'Email') ? 'Invalid email =)' : 'Invalid phone number!'
 		end
 	end
 end
