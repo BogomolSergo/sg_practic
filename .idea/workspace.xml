@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="31d90fbe-727a-4b32-ac29-e676c4c4f2e5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practic_lesson2.rb" afterPath="$PROJECT_DIR$/practic_lesson2.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -357,7 +356,7 @@
       <workItem from="1489326755233" duration="11761000" />
       <workItem from="1489431460403" duration="11228000" />
       <workItem from="1489443813299" duration="469000" />
-      <workItem from="1489487799343" duration="421000" />
+      <workItem from="1489487799343" duration="512000" />
     </task>
     <task id="LOCAL-00001" summary="PracticWork2&#10;">
       <created>1489341401155</created>
@@ -401,11 +400,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489442531917</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="PracticWork (changed)&#10;">
+      <created>1489488306708</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1489488306708</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24622000" />
+    <option name="totallyTimeSpent" value="24713000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="24" width="1317" height="744" extended-state="6" />
@@ -441,6 +447,7 @@
     <MESSAGE value="PracticWork (changed)&#10;" />
     <option name="LAST_COMMIT_MESSAGE" value="PracticWork (changed)&#10;" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
