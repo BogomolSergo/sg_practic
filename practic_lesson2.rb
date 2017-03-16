@@ -71,7 +71,7 @@ class Sms
 	end
 end
 
-Email.new.send_message('breinkiller650gmail.com') # Fine
+Email.new.send_message('breinkiller650@gmail.com') # Fine
 # Sms.new.send_message('380930851354') # Dont
 # Sms.log # Show log
 # Email.log
