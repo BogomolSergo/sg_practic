@@ -25,8 +25,8 @@
       <file leaf-file-name="practic_lesson2.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/practic_lesson2.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            <state relative-caret-position="54">
+              <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -327,7 +327,7 @@
       <workItem from="1489509906191" duration="331000" />
       <workItem from="1489510256645" duration="5141000" />
       <workItem from="1489518767334" duration="4625000" />
-      <workItem from="1489656480401" duration="2619000" />
+      <workItem from="1489656480401" duration="2723000" />
     </task>
     <task id="LOCAL-00001" summary="PracticWork2&#10;">
       <created>1489341401155</created>
@@ -434,11 +434,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489659083398</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="PracticWork (changed)&#10;">
+      <created>1489659111826</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1489659111826</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41211000" />
+    <option name="totallyTimeSpent" value="41315000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -725,8 +732,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/practic_lesson2.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        <state relative-caret-position="54">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
           <folding />
         </state>
       </provider>

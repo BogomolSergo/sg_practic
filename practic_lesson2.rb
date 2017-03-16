@@ -1,11 +1,22 @@
 module Service
 	class Deliver
+		require 'gmail'
+
 		def sms(recipient)
 			puts "Sending sms to: #{recipient} by Deliver class method"
 		end
 
 		def email(recipient)
 			puts "Sending email to: #{recipient} by Deliver class method"
+			gmail = Gmail.connect(recipient, 'password') #password unreal =)
+			gmail.deliver do
+				to 'sergey-bogomol-1994@yandex.ru'
+				subject 'Message with Ruby mail.'
+				text_part do
+					body 'This message send with Gmail service from my ruby application.'
+				end
+			end
+			gmail.logout
 		end
 	end
 end
