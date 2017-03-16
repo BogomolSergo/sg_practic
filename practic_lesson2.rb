@@ -1,22 +1,11 @@
 module Service
 	class Deliver
-		require 'gmail'
-
 		def sms(recipient)
 			puts "Sending sms to: #{recipient} by Deliver class method"
 		end
 
 		def email(recipient)
 			puts "Sending email to: #{recipient} by Deliver class method"
-			gmail = Gmail.connect(recipient, 'password') #password unreal =)
-			gmail.deliver do
-				to 'sergey-bogomol-1994@yandex.ru'
-				subject 'Message with Ruby mail.'
-				text_part do
-					body 'This message send with Gmail service from my ruby application.'
-				end
-			end
-			gmail.logout
 		end
 	end
 end
@@ -30,7 +19,7 @@ module Notification
 
 	module ClassMethods
 		def log
-			File.open("#{self.class.name.downcase}.log", 'r') { |f| puts f.readlines }
+			File.open("#{name.downcase}.log", 'r') { |f| puts f.readlines }
 		end
 	end
 
@@ -50,7 +39,7 @@ class Email
 
 	def send_message(email)
 		if email =~ /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-			super(email) { |recipient| puts "Sending email to #{recipient} by Gmail was done!" }
+			super(email) { |recipient| puts "Sending email to #{recipient} by block-param." }
 		else
 			add_to_log(email)
 			raise TypeError, 'Invalid email =)'
@@ -63,7 +52,7 @@ class Sms
 
 	def send_message(number)
 		if number =~ /\+380\d{9}/
-			super(number) { |recipient| puts "Sending SMS to #{recipient} by Gmail was done!" }
+			super(number) { |recipient| puts "Sending SMS to #{recipient} by block-param." }
 		else
 			add_to_log(number)
 			raise TypeError, 'Invalid phone number! Use only mobile.'
@@ -71,7 +60,7 @@ class Sms
 	end
 end
 
-Email.new.send_message('breinkiller650@gmail.com') # Fine
+Email.new.send_message('breinkiller650gmail.com') # Fine
 # Sms.new.send_message('380930851354') # Dont
 # Sms.log # Show log
 # Email.log
