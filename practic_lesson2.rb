@@ -1,8 +1,7 @@
 module Service
-	require 'mail'
-	require 'gmail'
-
 	class Deliver
+		require 'gmail'
+
 		def sms(recipient)
 			puts "Sending sms to: #{recipient} by Deliver class method"
 		end
